@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/1060ff926e.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Flopados</title>
+</head>
+<body>
+    <div class="bg">
+        <div class="logo"></div>
+        <div class="player">
+            <div class="locutor">
+                <div class="boneco"></div>
+                <div class="chao"></div>
+            </div>
+            
+            <div class="info">
+
+                <!-- primeira caixa-->
+
+                <div class="locutor_texto">
+                    <p>locutor:</p>
+                </div>
+                <div class="locutor_caixa">
+                    <div class="texto_locutor" style="font-size: 20px; font-family: momcake_thin; color: #ededed; text-align: center; margin-top: -2px; align-self: center; white-space: nowrap;"></div>
+                </div>
+
+                <!-- segunda caixa -->
+
+                <div class="programa_texto">
+                    <p>programa:</p>
+                </div>
+                <div class="programa_caixa">
+                    <div class="texto_programa" style="font-size: 20px; font-family: momcake_thin; color: #ededed; text-align: center; margin-top: -2px; align-self: center; white-space: nowrap;"></div>
+                </div>
+            </div>
+
+                <!-- volume -->
+
+                <div class="slider-container">
+                    <span class="bar"><span class="fill"></span></span>
+                    <input id="slider" class="slider" type="range" min="0" max="100" value="50">
+                </div>
+
+                <!-- botoes -->
+
+            <div class="botoes">
+                <div class="play" onclick="play()">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="pause" onclick="pause()">
+                    <i class="fas fa-pause"></i>
+                </div>
+                <div class="ouvinte">
+                    <i class="fas fa-users"></i>
+                    <div class="texto_ouvinte"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <iframe class="video" width="853" height="480" src="https://www.youtube.com/embed/YQDDm9HLkV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <audio id="stream" controls="" autoplay src="https://sonic.dedicado.stream:7077/stream" style="width: 0px; height: 0px;"></audio>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+
+        /*
+	DESENVOLVIDO POR Jo���ݧ�o Fernandes (0i2)
+	Instagram: @joaofernandesxd
+	Twitter:@joaofernandesxd
+*/
+var player = {
+	iniciar:function(){
+		$.ajax({
+    		url: "status.php",
+			dataType: "json",
+    		beforeSend:function(){
+				$('.boneco').css('background','url(http://www.habbo.com.br/habbo-imaging/avatarimage?user=:bly&action=&direction=2&head_direction=3&gesture=sml&size=m) center').animate({opacity:0.5});
+			},
+    		success:function(data){
+       			//console.log(data.avatar[0]);
+       			$('.boneco').css('background','url(http://www.habbo.com.br/habbo-imaging/avatarimage?user='+data.avatar[0]+'&action=&direction=2&head_direction=3&gesture=sml&size=m) center').animate({opacity:1});;
+       			$('.texto_locutor').html(data.locutor[0]);
+       			$('.texto_programa').html(data.programa[0]);
+       			$('.texto_ouvinte').html(data.ouvintes[0]);
+    		}
+		});
+	}
+}
+$(function (){
+	player.iniciar();
+});
+
+    </script>
+</body>
+</html>
