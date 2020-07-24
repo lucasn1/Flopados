@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
+.box-left {
+    position: fixed;
+    width: 240px;
+    height: 100%;
+    background-color: #343538;
+}
+
+.header {
+    float: left;
+    width: 100%;
+    height: 160px;
+}
+
+.header-img {
+    position: absolute;
+    width: 240px;
+    height: 160px;
+    background-image: url(https://lh3.googleusercontent.com/proxy/CV-BJ1dixglIeFYtNnxmrbZ2yPr_dF7IHjzPBcZL8iNCc-p3ijaAPbFOD7DmZ3DV7_hqUK2F7Twv_JqU-fJlGLy-acBXGh_8RpsNqn1oAUeHNn9tZpkI0jv8hBev2iH1GTyUubStmS4iDoDF);
+    background-size: 240px 160px;
+    opacity: 0.2;
+    box-shadow: inset 0px -3px 0px 0px rgba(255,255,255,0.5);
+    z-index: -1;
+}
+
+.profile {
+    margin: 30px 0 0 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,1);
+    background-size: 130%;
+    background-repeat: no-repeat;
+    background-image: url(https://lh3.googleusercontent.com/proxy/CV-BJ1dixglIeFYtNnxmrbZ2yPr_dF7IHjzPBcZL8iNCc-p3ijaAPbFOD7DmZ3DV7_hqUK2F7Twv_JqU-fJlGLy-acBXGh_8RpsNqn1oAUeHNn9tZpkI0jv8hBev2iH1GTyUubStmS4iDoDF);
+}
+
+.online {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #ededed;
+    border-radius: 100%;
+    background-color: #1cdc4f;
+    float: right;
+}
+
+.notification {
+    width: 30px;
+    height: 30px;
+    border-radius: 10%;
+    background-color: #ededed;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    align-content: center;
+    cursor: pointer;
+}
+
+.notification p {
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: #323232;
+}
+
+.user {
+    font-family: montserrat;
+    font-size: 16px;
+    color: #ededed;
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+
+.role {
+    font-family: montserrat;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    top: 25px;
+    left: 30px;
+}
+
+.boneco {
+    position: absolute;
+    top: 25px;
+    left: 130px;
+    width: 120px;
+    height: 135px;
+    background-image: url(https://www.habbo.com.br/habbo-imaging/avatarimage?hb=image&user=vicsacramento&headonly=0&direction=4&head_direction=2&action=wlk&gesture=eyb&size=l);
+}
+
+.menu a {
+    font-family: montserrat;
+    font-size: 14px;
+    color: #ededed;
+    text-decoration: none;
+}
+
+.menu i{
+    margin-right: 10px;
+    margin-left: 30px;
+}
+
+.menu{
+    top: 130px;
+    width: 100%;
+    height: 100%;
+    padding: 30px 0px;
+    position: absolute;
+  }
+  
+  .menu ul li{
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid #3a3b3d;
+    border-bottom: 1px solid #3a3b3d;
+    border-top: 1px solid #3a3b3d;
+    transition: 0.2s ease;
+  }    
+  
+  .menu ul li a{
+    color: #ededed;
+    font-weight: 500;
+    display: block;
+    transition: 0.2s ease;
+  }
+
+  .menu ul li:hover a {
+    margin-left: 15px;
+  }
+  
+  .menu ul li a .fas{
+    width: 10px;
+    transition: 0.3s ease;
+  }
+  
+  .menu ul li:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+      
+  .menu ul li:hover a{
+    color: #fff;
+  }
+   
